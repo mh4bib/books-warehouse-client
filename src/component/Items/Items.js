@@ -23,6 +23,7 @@ const Items = () => {
                     ></SingleItem>)
                 }
             </div>
+            <button className='mt-3'>Manage Inventories</button>
         </div>
     );
 };
