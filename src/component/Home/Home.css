@@ -1,0 +1,19 @@
+.parallax {
+    /* The image used */
+    /* background-image: url(''); */
+    background-image: url('../../images/banner.jpg');
+  /* background-color: aqua; */
+    /* Full height */
+    height: 550px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      height: 300px;
+    }
+  }
