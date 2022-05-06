@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.css';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -23,7 +24,9 @@ const Header = () => {
                             </NavDropdown>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Login</Nav.Link>
+                            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                            <div className='border-start vertical-line d-none d-lg-block'></div>
+                            <Nav.Link as={Link} to="/register">Register</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
