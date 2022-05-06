@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const SingleItem = (item) => {
     const { _id, name, picture, price, quantity, supplierName, desc } = item.item;
-    console.log(item.item);
+
+    const navigate = useNavigate();
+
+    const handleManageItem = _id =>{
+        navigate(`/manage-item/${_id}`)
+    }
     return (
         <div className='card'>
             <img className='w-100 px-5' src={picture} alt="" />
@@ -14,7 +20,7 @@ const SingleItem = (item) => {
                 <p className='col-6'>quantity: {quantity}</p>
             </div>
             <p>Supplier: {supplierName}</p>
-            <button className='w-25 mx-auto'>button</button>
+            <button className='w-25 mx-auto' onClick={()=>handleManageItem(_id)}>manage</button>
         </div>
     );
 };
