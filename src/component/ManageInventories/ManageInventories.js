@@ -6,21 +6,21 @@ const ManageInventories = () => {
     const {items, setItems} = useAllItems();
     // console.log(items);
 
-    const handleDeleteButton = id => {
-        const proceed = window.confirm('Are you sure you want to delete the item?');
-        if (proceed) {
-            const url =`http://localhost:5000/items/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-            .then(res=>res.json())
-            .then(data=>{
-                console.log(data);
-                const remainingItems = items.filter(item=>item._id !== id);
-                setItems(remainingItems);
-            })
-        }
-    }
+    // const handleDeleteButton = id => {
+    //     const proceed = window.confirm('Are you sure you want to delete the item?');
+    //     if (proceed) {
+    //         const url =`http://localhost:5000/items/${id}`;
+    //         fetch(url, {
+    //             method: 'DELETE'
+    //         })
+    //         .then(res=>res.json())
+    //         .then(data=>{
+    //             console.log(data);
+    //             const remainingItems = items.filter(item=>item._id !== id);
+    //             setItems(remainingItems);
+    //         })
+    //     }
+    // }
     return (
         <div className='container'>
             <h2 className='my-3'>Manage Inventories</h2>
@@ -42,7 +42,7 @@ const ManageInventories = () => {
       <td>{item.price}</td>
       <td>{item.quantity}</td>
       <td className='d-none d-md-block' style={{paddingBottom:'14px'}}>{item.supplierName}</td>
-      <td><button onClick={()=>handleDeleteButton(item._id)}>Delete</button></td>
+      {/* <td><button onClick={()=>handleDeleteButton(item._id)}>Delete</button></td> */}
     </tr>
         </>)
     }

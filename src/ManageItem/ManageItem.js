@@ -5,6 +5,7 @@ import './ManageItem.css';
 const ManageItem = () => {
     const {_id} = useParams();
     const [item, setItem] = useState({});
+    const [update, setUpdate] = useState(true);
 
     const { name, picture, price, quantity, supplierName, desc }=item;
 
@@ -13,7 +14,22 @@ const ManageItem = () => {
         fetch(url)
         .then(res=>res.json())
         .then(data=>setItem(data))
-    },[_id]);
+    },[update, _id]);
+
+    const handleDeliveredButton = id =>{
+        const newQuantity = quantity - 1;
+        let UpdatedQuantity = {newQuantity};
+        const url = `http://localhost:5000/items/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(UpdatedQuantity)
+        })
+        .then(res=>res.json())
+        .then(data=>setUpdate(!update))
+    }
     return (
         <div className='my-md-5'>
             <h2 className='mb-3'>Manage {name}</h2>
@@ -25,7 +41,7 @@ const ManageItem = () => {
                     <p>price: {price}</p>
                     <p>quantity: {quantity}</p>
                     <p>supplierName: {supplierName}</p>
-                    <button>DELIVERED</button>
+                    <button onClick={()=>handleDeliveredButton(item._id)}>DELIVERED</button>
                 </div>
                 <div className='col-12 col-md-3 bg-light p-2 m-2 border rounded d-flex flex-column justify-content-center align-items-center'>
                     <form className='mt-3'>

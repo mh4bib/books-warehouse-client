@@ -14,7 +14,7 @@ const AddItem = () => {
         const supplierName = event.target.supplierName.value;
         const picture = event.target.url.value;
         const desc = event.target.description.value;
-        const item = {name, price, quantity, supplierName, picture, desc, email};
+        const item = {name, picture, price, quantity, supplierName, desc, email};
         
         const url = 'http://localhost:5000/items';
         fetch(url, {
