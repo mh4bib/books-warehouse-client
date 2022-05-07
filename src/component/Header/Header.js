@@ -8,9 +8,9 @@ import { signOut } from 'firebase/auth';
 
 const Header = () => {
     const [user, loading, error] = useAuthState(auth);
-if (error) {
-    console.log(error);
-}
+    if (error) {
+        console.log(error);
+    }
     const handleLogout = () => {
         signOut(auth);
     }
@@ -24,6 +24,7 @@ if (error) {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/">HOME</Nav.Link>
+                            <Nav.Link as={Link} to="/manage-inventories">MANAGE ITEMS</Nav.Link>
                             <Nav.Link href="#about-us">ABOUT US</Nav.Link>
                             <Nav.Link as={Link} to="/blogs">BLOGS</Nav.Link>
                             <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
@@ -36,16 +37,18 @@ if (error) {
                         </Nav>
                         <Nav>
                             {
-                                !user?
+                                !user ?
                                     <>
                                         <Nav.Link as={Link} to="/login">Login</Nav.Link>
                                         <div className='border-start vertical-line d-none d-lg-block'></div>
                                         <Nav.Link as={Link} to="/register">Register</Nav.Link>
                                     </>
                                     :
-                                    
+                                    <>
+                                        <Nav.Link as={Link} to="/my-items">My Items</Nav.Link>
+                                        <Nav.Link as={Link} to="/add-inventory">Add Item</Nav.Link>
                                         <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
-                                    
+                                    </>
                             }
                         </Nav>
                     </Navbar.Collapse>

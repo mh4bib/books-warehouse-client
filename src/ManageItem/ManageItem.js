@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './ManageItem.css';
 
 const ManageItem = () => {
@@ -25,17 +25,17 @@ const ManageItem = () => {
                     <p>price: {price}</p>
                     <p>quantity: {quantity}</p>
                     <p>supplierName: {supplierName}</p>
-                    <button>Delivered</button>
+                    <button>DELIVERED</button>
                 </div>
                 <div className='col-12 col-md-3 bg-light p-2 m-2 border rounded d-flex flex-column justify-content-center align-items-center'>
                     <form className='mt-3'>
-                        <label>Restock Quantity</label><br />
+                        <label><h5>Restock Quantity</h5></label><br />
                         <input className='my-1' type="number" name="restock" id="" placeholder='Input Restock Quantity'/><br />
                         <input type="submit" value="RESTOCK" />
                     </form>
                 </div>
             </div>
-                <button className='my-3 mt-md-3'>Manage Inventories</button>
+            <Link to={'/manage-inventories'}><button className='mt-3'>Manage Inventories</button></Link>
         </div>
     );
 };
