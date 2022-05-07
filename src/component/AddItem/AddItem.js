@@ -1,12 +1,41 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
+    var email = user?.email;
+    
+    const handleAddItem = (event) =>{
+        event.preventDefault();
+        const name = event.target.itemName.value;
+        const price = event.target.price.value;
+        const quantity = event.target.quantity.value;
+        const supplierName = event.target.supplierName.value;
+        const picture = event.target.url.value;
+        const desc = event.target.description.value;
+        const item = {name, price, quantity, supplierName, picture, desc, email};
+        
+        const url = 'http://localhost:5000/items';
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+        .then(res=>res.json())
+        .then(result=>{
+            console.log(result);
+        })
+        
+    }
     return (
         <div className='bg-light login mx-auto my-3 p-3 p-md-5 rounded'>
             <h2>Add New Item</h2>
-            <form className='text-start'>
+            <form onSubmit={handleAddItem} className='text-start'>
                 <label>Item Name</label><br />
-                <input className='w-100 mb-2' type="text" name="ItemName" id="" placeholder='Item Name' /><br />
+                <input className='w-100 mb-2' type="text" name="itemName" id="" placeholder='Item Name' /><br />
                 <label>Price</label><br />
                 <input className='w-100 mb-2' type="number" name="price" id="" placeholder='Individual Price' /><br />
                 <label>Quantity</label><br />
