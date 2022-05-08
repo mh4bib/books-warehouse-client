@@ -11,7 +11,7 @@ const ManageItem = () => {
     const { name, picture, price, quantity, supplierName, desc } = item;
 
     useEffect(() => {
-        const url = `http://localhost:5000/items/${_id}`
+        const url = `https://calm-sea-17054.herokuapp.com/items/${_id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -29,7 +29,7 @@ const ManageItem = () => {
             const newQuantity = quantity - 1;
             UpdatedQuantity = { newQuantity };
         }
-        const url = `http://localhost:5000/items/${id}`;
+        const url = `https://calm-sea-17054.herokuapp.com/items/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

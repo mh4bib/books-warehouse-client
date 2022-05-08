@@ -10,7 +10,7 @@ const ManageInventories = () => {
     // const handleDeleteButton = id => {
     //     const proceed = window.confirm('Are you sure you want to delete the item?');
     //     if (proceed) {
-    //         const url =`http://localhost:5000/items/${id}`;
+    //         const url =`https://calm-sea-17054.herokuapp.com/items/${id}`;
     //         fetch(url, {
     //             method: 'DELETE'
     //         })

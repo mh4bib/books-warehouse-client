@@ -12,11 +12,11 @@ const MyItem = () => {
     // const token = localStorage.getItem('accessToken');
     // console.log(token);
     useEffect(() => {
-        // fetch(`http://localhost:5000/my-item?email=${email}&token=${token}`)
+        // fetch(`https://calm-sea-17054.herokuapp.com/my-item?email=${email}&token=${token}`)
         //     .then(res => res.json())
         //     .then(data => setItems(data))
         const getItems = async()=>{
-            const url = `http://localhost:5000/my-item?email=${email}`;
+            const url = `https://calm-sea-17054.herokuapp.com/my-item?email=${email}`;
         const {data} =await axios.get(url, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -30,7 +30,7 @@ const MyItem = () => {
     const handleDeleteButton = id => {
         const proceed = window.confirm('Are you sure you want to delete the item?');
         if (proceed) {
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://calm-sea-17054.herokuapp.com/items/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

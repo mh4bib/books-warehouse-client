@@ -16,7 +16,7 @@ const AddItem = () => {
         const desc = event.target.description.value;
         const item = {name, picture, price, quantity, supplierName, desc, email};
         
-        const url = 'http://localhost:5000/items';
+        const url = 'https://calm-sea-17054.herokuapp.com/items';
         fetch(url, {
             method: 'POST',
             headers: {
