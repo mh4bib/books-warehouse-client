@@ -37,15 +37,14 @@ const ManageInventories = () => {
   </thead>
   <tbody>
     {
-        items.map(item=><>
-        <tr>
+        items.map(item=>
+      <tr key={item._id}>
       <td className='text-start'><img src={item.picture} alt="" style={{width:'18px'}}/> {item.name}</td>
       <td>{item.price}</td>
       <td>{item.quantity}</td>
       <td className='d-none d-md-block' style={{paddingBottom:'14px'}}>{item.supplierName}</td>
       {/* <td><button onClick={()=>handleDeleteButton(item._id)}>Delete</button></td> */}
-    </tr>
-        </>)
+    </tr>)
     }
   </tbody>
 </Table>

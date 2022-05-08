@@ -46,15 +46,15 @@ const MyItem = () => {
                 </thead>
                 <tbody>
                     {
-                        items.map(item => <>
-                            <tr>
+                        items.map(item =>
+                            <tr key={item._id}>
                                 <td className='text-start'><img src={item.picture} alt="" style={{ width: '18px' }} /> {item.name}</td>
                                 <td>{item.price}</td>
                                 <td>{item.quantity}</td>
                                 <td className='d-none d-md-block' style={{ paddingBottom: '14px' }}>{item.supplierName}</td>
-                                <td><button onClick={() => handleDeleteButton(item._id)}>Delete</button></td>
+                                <td><button className='border-0 bg-danger px-3 py-1 text-white rounded'  onClick={() => handleDeleteButton(item._id)}>Delete</button></td>
                             </tr>
-                        </>)
+                        )
                     }
                 </tbody>
             </Table>

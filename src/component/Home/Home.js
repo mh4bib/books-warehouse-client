@@ -12,9 +12,7 @@ const Home = () => {
                 <div>
                     <img className='profile-img' src={profile} alt="" />
                     <h1 style={{color:'#f1db61'}} className=''>BOOK FAIR</h1>
-                    <p style={{color:'rgba(220,186,76,255)'}} className='profile-para mx-auto'>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                     Maiores, nisi! Lorem ipsum dolor sit amet. <span className='d-none d-md-block'> Lorem ipsum dolor sit, amet consectetur
-                      adipisicing elit. Maiores, nisi!</span></p>
+                    <p style={{color:'rgba(220,186,76,255)'}} className='profile-para mx-auto'>BOOK FAIR book stock is the oldest and largest book stock in the country. <span className='d-none d-md-block'> We are the solution for all of your book needs.</span></p>
                 </div>
             </div>
             <Items></Items>
