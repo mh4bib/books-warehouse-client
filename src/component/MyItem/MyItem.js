@@ -33,7 +33,7 @@ const MyItem = () => {
 
     return (
         <div className='container'>
-            <h2 className='my-3'>My Items</h2>
+            <h2 style={{color:'#b98632'}} className='my-3'>My Items</h2>
             <Table striped bordered hover>
                 <thead>
                     <tr>

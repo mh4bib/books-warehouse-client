@@ -1,6 +1,7 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import useAllItems from '../hooks/useAllItems';
+import './ManageInventories.css';
 
 const ManageInventories = () => {
     const {items, setItems} = useAllItems();
@@ -23,7 +24,7 @@ const ManageInventories = () => {
     // }
     return (
         <div className='container'>
-            <h2 className='my-3'>Manage Inventories</h2>
+            <h2 style={{color:'#b98632'}} className='my-3'>Manage Inventories</h2>
             <Table striped bordered hover>
   <thead>
     <tr>

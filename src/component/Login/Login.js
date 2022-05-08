@@ -39,7 +39,7 @@ const Login = () => {
         errorMessage = <span className='text-danger'>Error: {error?.message}</span>;
     }
     return (
-        <div className='bg-light login mx-auto my-3 p-3 p-md-5'>
+        <div className='my-form login mx-auto my-3 p-3 p-md-5'>
             <h2>Please Login</h2>
             <form onSubmit={handleLogin} className='text-start'>
                 <label>Email</label><br />
@@ -47,7 +47,7 @@ const Login = () => {
                 <label>Password</label><br />
                 <input className='w-100 mb-3' type="password" name="password" id="" placeholder='Your Password' /><br />
                 {errorMessage}
-                <input className='mb-3' type="submit" value="LOGIN" />
+                <input className='mb-3 my-small-button' type="submit" value="LOGIN" />
             </form>
 
             <p>Don't have an account? <Link className='text-decoration-none' to={'/register'}>Please Register</Link></p>

@@ -10,8 +10,8 @@ const Items = () => {
     const {items} = useAllItems();
     
     return (
-        <div className='container my-4'>
-            <h2>Items</h2>
+        <div className='container my-5'>
+            <h2 className='my-5' style={{color:'#b98632'}}>ITEMS</h2>
             <div className='card-container mx-auto'>
                 {
                     items.slice(0,6).map(item => <SingleItem

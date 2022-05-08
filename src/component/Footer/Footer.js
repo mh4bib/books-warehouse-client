@@ -7,12 +7,12 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 const Footer = () => {
     return (
-        <footer className='row m-0 bg-dark text-white'>
+        <footer style={{color:'#b98632'}} className='row m-0 bg-dark'>
             <div className='col-12 col-md-6 mt-4'>
                 <h3>Quick Links</h3>
-                <Link className='text-decoration-none text-white mx-3' to={"/"}>HOME</Link>
-                <Link className='text-decoration-none text-white mx-3' to={"/"}>HOME</Link>
-                <Link className='text-decoration-none text-white mx-3' to={"/"}>HOME</Link> <br />
+                <Link  style={{color:'#b98632'}} className='text-decoration-none mx-3' to={"/"}>HOME</Link>
+                <Link  style={{color:'#b98632'}} className='text-decoration-none mx-3' to={"/"}>MANAGE ITEMS</Link>
+                <Link  style={{color:'#b98632'}} className='text-decoration-none mx-3' to={"/"}>BLOGS</Link> <br />
                 <FontAwesomeIcon className='fs-2 mx-3 mt-3' icon={faFacebook} />
                 <FontAwesomeIcon className='fs-2 mx-3 mt-3' icon={faGithub} />
                 <FontAwesomeIcon className='fs-2 mx-3 mt-3' icon={faYoutube} />
@@ -23,7 +23,7 @@ const Footer = () => {
                 <p className='mb-2'><FontAwesomeIcon className='fs-5 me-2' icon={faLocationDot} />Adress: Banani, Dhaka</p>
             </div>
             <div className='col-12 mt-3 text-muted'>
-                <p><small>&copy; 2022 all right reserved  BOOK FAIR</small></p>
+                <p  style={{color:'#b98632'}}><small>&copy; 2022 all right reserved  BOOK FAIR</small></p>
             </div>
         </footer>
     );

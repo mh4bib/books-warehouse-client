@@ -42,7 +42,7 @@ const Register = () => {
     }
     return (
         <div>
-            <div className='bg-light login mx-auto my-3 p-3 p-md-5'>
+            <div className='login mx-auto my-3 p-3 p-md-5  my-form'>
                 <h2>Please Register</h2>
                 <form onSubmit={handleRegister} className='text-start'>
                     <label>Name</label><br />
@@ -54,7 +54,7 @@ const Register = () => {
                     <label>Confirm Password</label><br />
                     <input className='w-100 mb-3' type="password" name="confirmPassword" id="" placeholder='Confirm Password' /><br />
                     {errorMessage}{notMatched}
-                    <input className='mb-3' type="submit" value="REGISTER" />
+                    <input className='mb-3 my-small-button' type="submit" value="REGISTER" />
                 </form>
 
                 <p>Already have an account? <Link className='text-decoration-none' to={'/login'}>Please Login</Link></p>
