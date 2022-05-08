@@ -3,16 +3,28 @@ import { Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import useAllItems from '../hooks/useAllItems';
+const axios = require('axios');
 
 const MyItem = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
     const [items, setItems] = useState([]);
-
+    // const token = localStorage.getItem('accessToken');
+    // console.log(token);
     useEffect(() => {
-        fetch(`http://localhost:5000/my-item?email=${email}`)
-            .then(res => res.json())
-            .then(data => setItems(data))
+        // fetch(`http://localhost:5000/my-item?email=${email}&token=${token}`)
+        //     .then(res => res.json())
+        //     .then(data => setItems(data))
+        const getItems = async()=>{
+            const url = `http://localhost:5000/my-item?email=${email}`;
+        const {data} =await axios.get(url, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        });
+        setItems(data);
+        }
+        getItems();
     }, []);
 
     const handleDeleteButton = id => {

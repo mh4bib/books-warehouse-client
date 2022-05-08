@@ -42,26 +42,26 @@ const ManageItem = () => {
     }
     return (
         <div className='my-md-5'>
-            <h2 className='mb-3'>Manage {name}</h2>
+            <h2  style={{color:'#b98632'}} className='mb-3'>Manage {name}</h2>
             <div className='row m-0 justify-content-center p-2 p-md-0'>
-                <div className='col-12 col-md-4 bg-light p-2 m-2 border rounded'>
+                <div className='col-12 col-md-4 p-2 m-2 border rounded my-form'>
                     <img src={picture} alt="" className='item-img' />
                     <h3>product name: {name}</h3>
                     <p>product id: {item._id}</p>
                     <p>price: {price}</p>
                     <p>quantity: {quantity}</p>
                     <p>supplierName: {supplierName}</p>
-                    <button onClick={() => handleUpdateButton(item._id, false)}>DELIVERED</button>
+                    <button className='my-small-button' onClick={() => handleUpdateButton(item._id, false)}>DELIVERED</button>
                 </div>
-                <div className='col-12 col-md-3 bg-light p-2 m-2 border rounded d-flex flex-column justify-content-center align-items-center'>
+                <div className='col-12 col-md-3 p-2 m-2 border rounded d-flex flex-column justify-content-center align-items-center my-form'>
                     <form className='mt-3'>
                         <label><h5>Restock Quantity</h5></label><br />
                         <input className='my-1' type="number" ref={restockRef} id="" placeholder='Input Restock Quantity' /><br />
-                        <button type="button" onClick={() => handleUpdateButton(item._id, true)}>RESTOCK</button>
+                        <button className='my-small-button' type="button" onClick={() => handleUpdateButton(item._id, true)}>RESTOCK</button>
                     </form>
                 </div>
             </div>
-            <Link to={'/manage-inventories'}><button className='mt-3'>Manage Inventories</button></Link>
+            <Link to={'/manage-inventories'}><button className='mt-3  border-0 px-3 py-2 rounded text-white bg-warning'>Manage Inventories</button></Link>
         </div>
     );
 };

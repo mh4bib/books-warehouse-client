@@ -20,7 +20,7 @@ const Items = () => {
                     ></SingleItem>)
                 }
             </div>
-            <Link to={'/manage-inventories'}><button className='mt-3'>Manage Inventories</button></Link>
+            <Link to={'/manage-inventories'}><button className='mt-3  border-0 px-3 py-2 rounded text-white bg-warning'>Manage Inventories</button></Link>
         </div>
     );
 };

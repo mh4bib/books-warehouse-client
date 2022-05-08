@@ -3,16 +3,16 @@
     color:#b4832c;
 }
 .my-small-button{
-    border: 2px solid #dcbc4b;
+    border: 2px solid #ffbf0080;
     border-radius: 5px;
-    background-color: #dcbc4b;
+    background-color: #ffbf0080;
     color: white;
     padding: 3px 7px;
 }
 .my-small-button:hover{
-    border: 2px solid #dcbc4b;
+    border: 2px solid #ffc107;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #dcbc4b;
+    background-color:#ffc107 ;
+    color: #ffffff;
     padding: 3px 7px;
 }

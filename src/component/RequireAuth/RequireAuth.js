@@ -23,7 +23,7 @@ const RequireAuth = ({children}) => {
             <button
             className='my-small-button mb-3'
                 onClick={async () => {
-                    await sendEmailVerification();
+                    await sendEmailVerification(auth);
                     toast('Verification mail sent');
                 }}
             >

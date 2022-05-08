@@ -43,7 +43,7 @@ const ManageInventories = () => {
       <td>{item.price}</td>
       <td>{item.quantity}</td>
       <td className='d-none d-md-block' style={{paddingBottom:'14px'}}>{item.supplierName}</td>
-      {/* <td><button onClick={()=>handleDeleteButton(item._id)}>Delete</button></td> */}
+      <td>{item.category}</td>
     </tr>)
     }
   </tbody>

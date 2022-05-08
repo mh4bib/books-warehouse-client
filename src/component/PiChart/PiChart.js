@@ -11,7 +11,7 @@ const PiChart = () => {
         { name: "Drama", value: 4 }
     ];
 
-    const COLORS = ["#dfc04c", "green", "blue", "#8e8e8c", "#e00809"];
+    const COLORS = ["#873e23", "#195e83", "#6fcee3", "#8e8e8c", "#f0c275"];
 
     const RADIAN = Math.PI / 180;
     const renderCustomizedLabel = ({
@@ -43,7 +43,7 @@ const PiChart = () => {
     };
 
     return (
-        <div className='row d-none d-md-flex justify-content-center align-items-center my-5'>
+        <div className='row m-0 d-none d-md-flex justify-content-center align-items-center my-5 mx-5 border border-3 border-warning rounded-3'>
             
         <div className='col-4'><PieChart  width={400} height={400}>
                     <Pie
@@ -65,8 +65,8 @@ const PiChart = () => {
                 </div>
                 <div className='col-4 text-start'>
                     <h3>A graphical presentation of our stock</h3>
-                    <p>Here you will see the exact picture of our enriched book stock <br />
-                    We can fulfill your and customers demand</p>
+                    <p>Here you will see the exact picture of our enriched book stock. <br />
+                    We can fulfill your and your customers demand</p>
                 </div>
                 </div>
     );

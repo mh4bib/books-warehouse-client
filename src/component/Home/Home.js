@@ -1,6 +1,7 @@
 import React from 'react';
 import AboutUs from '../AboutUs/AboutUs';
 import Items from '../Items/Items';
+import Footer from '../Footer/Footer';
 import PiChart from '../PiChart/PiChart';
 import profile from '../../images/unnamed (1).png'
 import './Home.css';
@@ -18,6 +19,7 @@ const Home = () => {
             <Items></Items>
             <PiChart></PiChart>
             <AboutUs></AboutUs>
+            <Footer></Footer>
         </div>
     );
 };
