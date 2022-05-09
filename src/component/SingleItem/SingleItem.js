@@ -12,7 +12,7 @@ const SingleItem = (item) => {
         navigate(`/manage-item/${_id}`)
     }
     return (
-        <div className='card my-card'>
+        <div className='my-card'>
             <img className='w-100 px-5' src={picture} alt="" />
             <h2>{name}</h2>
             <p><small>{desc.slice(0, 130)}...</small></p>

@@ -11,7 +11,7 @@ const Register = () => {
     let from = location.state?.from?.pathname || "/";
 
     let errorMessage;
-    let notMatched;
+    // var notMatched;
 
     const [
         createUserWithEmailAndPassword,
@@ -25,14 +25,8 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        const confirmPassword = event.target.confirmPassword.value;
-        console.log(confirmPassword);
-        if(password === confirmPassword){
+        // console.log(confirmPassword);
             createUserWithEmailAndPassword(email, password);
-        }
-        else{
-            notMatched = <span className='text-danger'>Password does not matched</span>;
-        }
     }
     if(user){
         navigate(from, { replace: true });
@@ -51,9 +45,7 @@ const Register = () => {
                     <input className='w-100 mb-3' type="email" name="email" id="" placeholder='Your Email' /><br />
                     <label>Password</label><br />
                     <input className='w-100 mb-3' type="password" name="password" id="" placeholder='Your Password' /><br />
-                    <label>Confirm Password</label><br />
-                    <input className='w-100 mb-3' type="password" name="confirmPassword" id="" placeholder='Confirm Password' /><br />
-                    {errorMessage}{notMatched}
+                    {errorMessage}
                     <input className='mb-3 my-small-button' type="submit" value="REGISTER" />
                 </form>
 

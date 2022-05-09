@@ -33,7 +33,7 @@ const Header = () => {
                                 !user ?
                                     <>
                                         <Nav.Link style={{color:'#b98632'}} as={Link} to="/login">Login</Nav.Link>
-                                        <div style={{color:'#b98632'}} className='border-start vertical-line d-none d-lg-block'></div>
+                                        <div style={{color:'#b98632'}} className='vertical-line d-none d-lg-block'></div>
                                         <Nav.Link style={{color:'#b98632'}} as={Link} to="/register">Register</Nav.Link>
                                     </>
                                     :

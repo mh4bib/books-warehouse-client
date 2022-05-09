@@ -71,7 +71,7 @@ const Login = () => {
                     textDecoration: "none",
                     backgroundColor: "transparent",
                     border: "none",
-                    color: "rgb(0, 160, 0)",
+                    color: "blue",
                 }}
                 className="btn btn-link p-0"
                 onClick={resetPassword}

@@ -12,9 +12,6 @@ const MyItem = () => {
     // const token = localStorage.getItem('accessToken');
     // console.log(token);
     useEffect(() => {
-        // fetch(`https://calm-sea-17054.herokuapp.com/my-item?email=${email}&token=${token}`)
-        //     .then(res => res.json())
-        //     .then(data => setItems(data))
         const getItems = async()=>{
             const url = `https://calm-sea-17054.herokuapp.com/my-item?email=${email}`;
         const {data} =await axios.get(url, {
