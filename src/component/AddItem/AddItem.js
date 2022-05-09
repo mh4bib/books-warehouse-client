@@ -5,8 +5,9 @@ import auth from '../../firebase.init';
 const AddItem = () => {
     const [user] = useAuthState(auth);
     var email = user?.email;
-    
-    const handleAddItem = (event) =>{
+
+    // handle add item button
+    const handleAddItem = (event) => {
         event.preventDefault();
         const name = event.target.itemName.value;
         const price = event.target.price.value;
@@ -14,21 +15,22 @@ const AddItem = () => {
         const supplierName = event.target.supplierName.value;
         const picture = event.target.url.value;
         const desc = event.target.description.value;
-        const item = {name, picture, price, quantity, supplierName, desc, email};
-        
+        const item = { name, picture, price, quantity, supplierName, desc, email };
+
+        // add to db 
         const url = 'https://calm-sea-17054.herokuapp.com/items';
         fetch(url, {
             method: 'POST',
             headers: {
-                'content-type':'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(item)
         })
-        .then(res=>res.json())
-        .then(result=>{
-            console.log(result);
-        })
-        
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+
     }
     return (
         <div className='my-form login mx-auto my-3 p-3 p-md-5 rounded'>

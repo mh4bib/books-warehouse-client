@@ -6,7 +6,7 @@ import auth from '../../firebase.init';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import 'react-toastify/dist/ReactToastify.css';
 
-const RequireAuth = ({children}) => {
+const RequireAuth = ({ children }) => {
     const [user, loading] = useAuthState(auth);
     const location = useLocation();
 
@@ -15,13 +15,13 @@ const RequireAuth = ({children}) => {
         return <LoadingSpinner></LoadingSpinner>;
     }
     if (!user) {
-        return <Navigate to="/login" state={{from:location}} replace />;
+        return <Navigate to="/login" state={{ from: location }} replace />;
     }
     if (!user.emailVerified) {
         return <div className='text-center mt-5'>
             <h3 className='text-danger'>Your are not verified!!</h3>
             <button
-            className='my-small-button mb-3'
+                className='my-small-button mb-3'
                 onClick={async () => {
                     await sendEmailVerification(auth);
                     toast('Verification mail sent');

@@ -42,7 +42,7 @@ const ManageItem = () => {
     }
     return (
         <div className='my-md-5'>
-            <h2  style={{color:'#b98632'}} className='mb-3'>Manage {name}</h2>
+            <h2 style={{ color: '#b98632' }} className='mb-3'>Manage {name}</h2>
             <div className='row m-0 justify-content-center p-2 p-md-0'>
                 <div className='col-12 col-md-4 p-2 m-2 border rounded my-form'>
                     <img src={picture} alt="" className='item-img' />

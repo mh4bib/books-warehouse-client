@@ -11,7 +11,6 @@ const Register = () => {
     let from = location.state?.from?.pathname || "/";
 
     let errorMessage;
-    // var notMatched;
 
     const [
         createUserWithEmailAndPassword,
@@ -26,9 +25,9 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         // console.log(confirmPassword);
-            createUserWithEmailAndPassword(email, password);
+        createUserWithEmailAndPassword(email, password);
     }
-    if(user){
+    if (user) {
         navigate(from, { replace: true });
     }
     if (error) {

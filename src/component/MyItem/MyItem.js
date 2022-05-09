@@ -9,21 +9,22 @@ const MyItem = () => {
     const [user] = useAuthState(auth);
     const email = user?.email;
     const [items, setItems] = useState([]);
-    // const token = localStorage.getItem('accessToken');
-    // console.log(token);
+
+    // load item 
     useEffect(() => {
-        const getItems = async()=>{
+        const getItems = async () => {
             const url = `https://calm-sea-17054.herokuapp.com/my-item?email=${email}`;
-        const {data} =await axios.get(url, {
-            headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            }
-        });
-        setItems(data);
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
+            setItems(data);
         }
         getItems();
     }, []);
 
+    // handle delete button 
     const handleDeleteButton = id => {
         const proceed = window.confirm('Are you sure you want to delete the item?');
         if (proceed) {
@@ -42,7 +43,7 @@ const MyItem = () => {
 
     return (
         <div className='container'>
-            <h2 style={{color:'#b98632'}} className='my-3'>My Items</h2>
+            <h2 style={{ color: '#b98632' }} className='my-3'>My Items</h2>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -54,6 +55,8 @@ const MyItem = () => {
                     </tr>
                 </thead>
                 <tbody>
+
+                    {/* map on items  */}
                     {
                         items.map(item =>
                             <tr key={item._id}>
@@ -61,7 +64,7 @@ const MyItem = () => {
                                 <td>{item.price}</td>
                                 <td>{item.quantity}</td>
                                 <td className='d-none d-md-block' style={{ paddingBottom: '14px' }}>{item.supplierName}</td>
-                                <td><button className='border-0 bg-danger px-3 py-1 text-white rounded'  onClick={() => handleDeleteButton(item._id)}>Delete</button></td>
+                                <td><button className='border-0 bg-danger px-3 py-1 text-white rounded' onClick={() => handleDeleteButton(item._id)}>Delete</button></td>
                             </tr>
                         )
                     }

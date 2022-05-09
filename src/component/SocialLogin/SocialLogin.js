@@ -10,12 +10,12 @@ const SocialLogin = () => {
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
-    
+
     let errorMessage;
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     // console.log(error);
 
-    if(user){
+    if (user) {
         console.log(user);
         navigate(from, { replace: true });
     }
@@ -24,11 +24,11 @@ const SocialLogin = () => {
     }
 
     return (
-            <div>
-                <button onClick={() => signInWithGoogle()} className='bg-dark w-75 mx-auto text-white p-2 my-3'><FontAwesomeIcon icon={faGoogle} /><span className='ms-2'>Login with Google</span></button>
-                <button className='bg-dark w-75 mx-auto text-white p-2'><FontAwesomeIcon icon={faFacebookF} /><span className='ms-2'>Login with Facebook</span></button>
-                {errorMessage}
-            </div>
+        <div>
+            <button onClick={() => signInWithGoogle()} className='bg-dark w-75 mx-auto text-white p-2 my-3'><FontAwesomeIcon icon={faGoogle} /><span className='ms-2'>Login with Google</span></button>
+            <button className='bg-dark w-75 mx-auto text-white p-2'><FontAwesomeIcon icon={faFacebookF} /><span className='ms-2'>Login with Facebook</span></button>
+            {errorMessage}
+        </div>
     );
 };
 

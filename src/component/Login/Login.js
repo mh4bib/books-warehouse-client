@@ -27,6 +27,8 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
+    // handle login button 
     const handleLogin = async event => {
         event.preventDefault();
         const email = event.target.email.value;
@@ -43,6 +45,8 @@ const Login = () => {
     if (error) {
         errorMessage = <span className='text-danger'>Error: {error?.message}</span>;
     }
+
+    // password reset 
     const resetPassword = async () => {
         const email = emailRef.current.value;
         if (email) {
@@ -55,6 +59,7 @@ const Login = () => {
     };
     return (
         <div className='my-form login mx-auto my-3 p-3 p-md-5'>
+            {/* login form  */}
             <h2>Please Login</h2>
             <form onSubmit={handleLogin} className='text-start'>
                 <label>Email</label><br />
@@ -65,7 +70,10 @@ const Login = () => {
                 <input className='mb-3 my-small-button' type="submit" value="LOGIN" />
             </form>
 
+            {/* register  */}
             <p>Don't have an account? <Link className='text-decoration-none' to={'/register'}>Please Register</Link></p>
+
+            {/* reset password */}
             <Button
                 style={{
                     textDecoration: "none",

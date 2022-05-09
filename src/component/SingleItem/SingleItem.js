@@ -8,7 +8,7 @@ const SingleItem = (item) => {
 
     const navigate = useNavigate();
 
-    const handleManageItem = _id =>{
+    const handleManageItem = _id => {
         navigate(`/manage-item/${_id}`)
     }
     return (
@@ -21,7 +21,7 @@ const SingleItem = (item) => {
                 <p className='col-6'>quantity: {quantity}</p>
             </div>
             <p>Supplier: {supplierName}</p>
-            <button className='mx-auto mb-1 my-small-button' onClick={()=>handleManageItem(_id)}>manage</button>
+            <button className='mx-auto mb-1 my-small-button' onClick={() => handleManageItem(_id)}>manage</button>
         </div>
     );
 };
