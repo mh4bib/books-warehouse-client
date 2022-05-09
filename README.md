@@ -1,4 +1,16 @@
-# Getting Started with Create React App
+# BOOK FAIR
+It is a stock management website for book. Inventories are well decorated and well sorted to help manage accurately. Users can add and remove their product and update stock quantity. As it is a single page application, it is also rendered efficiently.
+
+See [live preview](https://books-warehouse-e0226.web.app/) of the project.
+
+* email-password bases and google login system to authenticate user.
+* has protected route to secure users individual item.
+* emplemented jwt to ensure users data stored in database 
+* used nodejs to create, read, update and delete data
+* to store data, store used mongodb as it is noSql irrelational database  and easyto handle. 
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
