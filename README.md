@@ -1,5 +1,6 @@
-#BOOK FAIR
-It is a stock management website for book. Inventories are well decorated and well sorted to help manage accurately. Users can add and remove their product and update stock quantity. As it is a single page application, it is also rendered efficiently. 
+# BOOK FAIR
+It is a stock management website for book. Inventories are well decorated and well sorted to help manage accurately. Users can add and remove their product and update stock quantity. As it is a single page application, it is also rendered efficiently.
+
 See [live preview](https://books-warehouse-e0226.web.app/) of the project.
 
 * email-password bases and google login system to authenticate user.
